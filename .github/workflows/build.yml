@@ -22,7 +22,7 @@ jobs:
     - name: Instalo Qt
       uses: jurplel/install-qt-action@v3
       with:
-        version: '6.5.0'
+        version: '6.7.2'
         target: 'desktop'
 
     - name: Instalo varësitë e Node.js
