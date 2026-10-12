@@ -40,7 +40,7 @@ jobs:
           
           # Përdorim windeployqt për të tërhequr automatikisht DLL-të e duhura
           # Rruga e Qt gjehet nga variablat e mjedisit në runner-in e GitHub
-          windeployqt --qmldir . release/eaglegui_native.node
+          windeployqt --release --qmldir . release/eaglegui_native.node
 
     - name: Ngarko Artifacts (ZIP i plotë)
       uses: actions/upload-artifact@v4
