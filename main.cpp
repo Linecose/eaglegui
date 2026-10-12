@@ -8,6 +8,7 @@
 #include <napi.h>
 
 #include <QApplication>
+#include <QDir>
 #include <QEvent>
 #include <QLabel>
 #include <QLineEdit>
@@ -275,7 +276,12 @@ class Elementi : public Napi::ObjectWrap<Elementi> {
 // Funksione globale
 // ---------------------------------------------------------------------------
 Napi::Value Fillo(const Napi::CallbackInfo& info) {
-  if (!g_aplikacioni) g_aplikacioni = new QApplication(g_argc, g_argv);
+  if (!g_aplikacioni) {
+    // I tregojmë Qt-së se ku ndodhet dosja platforms në folderin aktual
+    QCoreApplication::addLibraryPath(QDir::currentPath());
+    
+    g_aplikacioni = new QApplication(g_argc, g_argv);
+  }
   return info.Env().Undefined();
 }
 
