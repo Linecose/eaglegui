@@ -28,13 +28,8 @@ jobs:
     - name: Instalo varësitë e Node.js
       run: npm install
 
-    - name: Kompilo projektin me CMake
-      run: |
-        if (Test-Path build) { Remove-Item -Recurse -Force build }
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build . --config Release
+    - name: Kompilo me cmake-js
+      run: npx cmake-js compile --release
 
     - name: Ruaj skedarin binar (.node)
       uses: actions/upload-artifact@v4
