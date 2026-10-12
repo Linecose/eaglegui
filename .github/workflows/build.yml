@@ -30,6 +30,7 @@ jobs:
 
     - name: Kompilo projektin me CMake
       run: |
+        if (Test-Path build) { Remove-Item -Recurse -Force build }
         mkdir build
         cd build
         cmake ..
