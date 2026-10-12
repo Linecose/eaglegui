@@ -16,8 +16,8 @@ execute_process(
   OUTPUT_VARIABLE NODE_ADDON_API_DIR
 )
 string(REGEX REPLACE "[\r\n\"]" "" NODE_ADDON_API_DIR "${NODE_ADDON_API_DIR}")
-
-add_library(${PROJECT_NAME} SHARED src/main.cpp ${CMAKE_JS_SRC})
+                                   #src/main.cpp
+add_library(${PROJECT_NAME} SHARED main.cpp ${CMAKE_JS_SRC})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_JS_INC} ${NODE_ADDON_API_DIR})
