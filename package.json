@@ -2,21 +2,37 @@
   "name": "eaglegui",
   "version": "0.1.0-demo",
   "description": "EagleGUI – modul Node.js me Qt për ndërfaqe grafike, me sintaksë në shqip (version demo)",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "nderto": "cmake-js compile",
     "rinderto": "cmake-js rebuild",
-    "demo": "node shembull/demo.js"
+    "test": "node test.js",
+    "demo": "node demo.js",
+    "demo:gui": "node demo-gui.js"
   },
-  "keywords": ["qt", "gui", "native", "shqip", "albanian", "nodegui"],
+  "keywords": [
+    "qt",
+    "gui",
+    "native",
+    "shqip",
+    "albanian",
+    "nodegui"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "node-addon-api": "^8.0.0"
+    "node-addon-api": "^8.9.2"
   },
   "devDependencies": {
     "cmake-js": "^7.3.0"
-  }
+  },
+  "files": [
+    "index.js",
+    "gui.js",
+    "main.cpp",
+    "CMakeLists.txt",
+    "README.md"
+  ]
 }

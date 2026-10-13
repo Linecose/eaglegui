@@ -7,9 +7,12 @@
  * Metodat: vendosTekstin, merrTekstin, vendosTitullin, vendosMadhesine,
  *          vendosStilin, shtoFemije, ne, shfaq, fshih, mbyll
  * Ngjarjet: "klikim" (Buton), "ndryshim" (FushaTeksti), "mbyllje" (Dritare)
+ *
+ * Gjithashtu rieksporton sintaksen e gui.js (krijo_dritare, buton_i_ri, kontejner, ...)
+ * dhe EMRAT_GUI, ne menyre qe `require('eaglegui')` te mjaftoje per te dyja stilet.
  */
 
-const nativ = require('../build/Release/eaglegui_native.node');
+const nativ = require('./build/Release/eaglegui_native.node');
 
 let filluar = false;
 function siguroFillimin() {
@@ -81,4 +84,4 @@ const Aplikacion = {
   },
 };
 
-module.exports = { Aplikacion, Dritare, Buton, Etikete, FushaTeksti };
+module.exports = { Aplikacion, Dritare, Buton, Etikete, FushaTeksti, ...require('./gui.js') };
